@@ -17,6 +17,21 @@ export default new Router({
     }, {
       path: '/todolist',
       component: Todolist
+    }, {
+      path: '/todolist',
+      component: Todolist
+    }, {
+      path: '/todolist',
+      component: Todolist
+    }, {
+      path: '/todolist',
+      component: Todolist
+    }, {
+      path: '/todolist',
+      component: Todolist
+    }, {
+      path: '/todolist',
+      component: Todolist
     },
   ]
 })

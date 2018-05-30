@@ -7,9 +7,12 @@ import api from './api/index.js'
 Vue.prototype.$api = api;
 Vue.config.productionTip = false;
 
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
-});
+document.addEventListener('deviceready', function () {
+  new Vue({
+    el: '#app',
+    router,
+    components: {App},
+    template: '<App/>'
+  });
+}, false);
+

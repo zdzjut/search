@@ -41,12 +41,12 @@ module.exports = {
 
     cssSourceMap: true
   },
-
+//修改打包位置和是否有反斜杠前缀
   build: {
-    index: path.resolve(__dirname, '../dist/index.html'),
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    index: path.resolve(__dirname, '../../memory/memory/www/index.html'),
+    assetsRoot: path.resolve(__dirname, '../../memory/memory/www/'),
+    assetsSubDirectory: '',
+    assetsPublicPath: '',
     productionSourceMap: true,
     devtool: '#source-map',
     productionGzip: false,
