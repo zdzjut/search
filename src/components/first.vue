@@ -3,10 +3,17 @@
     <input type="text" value="" v-model="id"/>
     <a href="javascript:void(0)" v-on:click="search">搜索</a>
     <a href="javascript:void(0)" v-on:click="up">上一条</a>
-    <a href="javascript:void(0)" v-on:click="down">下一跳</a>
+    <a href="javascript:void(0)" v-on:click="down">下一条</a>
     <a href="javascript:void(0)" v-on:click="first">最新一条</a>
+    <br/>
     <textarea>{{ message }}</textarea>
+    <br/>
+
     <textarea>{{ summary }}</textarea>
+    <br/>
+    <router-link :to="{ path: '/content'}">跳转到content</router-link>
+    <br/>
+    <router-link :to="{ path: '/todolist'}">跳转到todolist</router-link>
   </div>
 </template>
 
@@ -51,5 +58,7 @@
 </script>
 
 <style scoped>
-
+  textarea{
+    width: 80%;
+  }
 </style>

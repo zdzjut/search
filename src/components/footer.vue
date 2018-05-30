@@ -1,5 +1,7 @@
 <template>
-  <footer class="copy">
-   底部信息
+  <footer class="logo">
+
+
+  <a href="http://www.baidu.com" target="_blank"> 友情链接</a>
   </footer>
 </template>

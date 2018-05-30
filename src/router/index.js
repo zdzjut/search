@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/index'
 import Content from '@/page/content'
+import Todolist from '@/page/todolist'
 
 Vue.use(Router);
 
@@ -11,8 +12,11 @@ export default new Router({
       path: '/',
       component: Index
     }, {
-      path: '/content/:id',
+      path: '/content',
       component: Content
-    }
+    }, {
+      path: '/todolist',
+      component: Todolist
+    },
   ]
 })
