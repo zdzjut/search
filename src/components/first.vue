@@ -1,6 +1,7 @@
 <template>
   <div>
     <input type="text" value="" v-model="id"/>
+    <button @click="camera()">Take picture</button>
     <a href="javascript:void(0)" v-on:click="search">搜索</a>
     <a href="javascript:void(0)" v-on:click="up">上一条</a>
     <a href="javascript:void(0)" v-on:click="down">下一条</a>
@@ -18,6 +19,10 @@
 </template>
 
 <script>
+
+  import {cameraTakePicture} from "../../static/cordovaplugin"
+
+
   export default {
     name: 'first',
     data() {
@@ -28,6 +33,9 @@
       }
     },
     methods: {
+      camera:function(){
+        cameraTakePicture();
+      },
       up: function () {
         this.$api.get(`up/${this.id}`, null, r => {
           this.message = r.data.message;
