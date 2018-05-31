@@ -9,7 +9,7 @@
 
     <!--<input type="button" value="添加用户" onclick="addUser()"><div style="height: 10px"></div>-->
     <!--<input type="button" value="新一局" onclick="toChoose()"><div style="height: 10px"></div>-->
-    <!--<input type="button" value="继续" onclick="goOn()"><div style="height: 10px"></div>-->
+    <!--<input type="button" value="     继续" onclick="goOn()"><div style="height: 10px"></div>-->
     <!--<input type="button" value="查看历史战况" onclick="toShowHistoryList()"><div style="height: 10px"></div>-->
     <!--<input type="button" value="查看个人信息" onclick="toUser()"><div style="height: 10px"></div>-->
     <!--<input type="button" value="退出"><div style="height: 10px"></div>-->
