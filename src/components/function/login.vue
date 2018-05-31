@@ -22,7 +22,7 @@
     },
     methods: {
       addNewItem: function () {
-        let date = new Date();//获取系统当前时 间
+        let date = new Date();//获取系统 当前时 间
         let timStr = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes();
         this.items.push({
           thing: this.newItem,
