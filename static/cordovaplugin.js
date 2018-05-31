@@ -15,7 +15,8 @@
 // }
 
 /**
-* 选择图片库 imageId显示的ID
+* 选择图片库
+ * imageId显示的ID
  * url 后台接收地址
  */
 function fetchPictures(imageId,url) {
