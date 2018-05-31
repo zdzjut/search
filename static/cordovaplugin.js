@@ -118,7 +118,7 @@ function dialogConfirm(message,title,buttonLabels) {
   }
 
 }
-//允许用户在对话框输入元素中键入文本。
+//允许用户在对话框输入元素 中键入文本。
 function dialogPrompt(message,title,buttonLabels,defaultText) {
   navigator.notification.prompt(message, promptCallback, title, buttonLabels, defaultText);
 
@@ -134,6 +134,7 @@ function dialogBeep() {
   var times = 2;
   navigator.notification.beep(times);
 }
+
 
 export {
   capturePictures,fetchPictures,warn,dialogConfirm,dialogPrompt,dialogBeep
