@@ -1,5 +1,63 @@
-.logo {color: red;}
-.list {
-  line-height: 2;
-  li {border-bottom: 1px solid #ddd;}
+/*通用样式*/
+body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, q, dl, dt, dd, ol, ul, li, input, fieldset, form, legend, caption, tbody, tfoot, thead, article, aside, dialog, figure, footer, header, hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+html{
+  height: 100%;
+  width: 100%;
+  font-size: 10px;
+}
+body {
+  color: #333;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  /*Font-size:62.5%*/
+}
+img {
+  border: 0;
+}
+/*自定义链接颜色(可自由更换)*/
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+/*链接-颜色*/
+
+a:hover {
+  color: #1380cb;
+}
+
+/*链接-悬浮颜色*/
+
+.text-underline:hover {
+  text-decoration: underline;
+}
+/***float***/
+
+.fl {
+  float: left !important;
+}
+.fr {
+  float: right !important;
+}
+/*清除浮动*/
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clear {
+  clear: both;
 }

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/page/index'
+import Index from '@/page/fight/index'
 import Content from '@/page/content'
 import Todolist from '@/page/todolist'
 
