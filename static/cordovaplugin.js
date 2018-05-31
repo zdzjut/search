@@ -1,18 +1,90 @@
-function cameraTakePicture() {
-  navigator.camera.getPicture(onSuccess, onFail, {
+// function cameraTakePicture(imageId) {
+//   navigator.camera.getPicture(onSuccess, onFail, {
+//     quality: 50,
+//     destinationType: Camera.DestinationType.DATA_URL
+//   });
+//
+//   function onSuccess(imageData) {
+//     var image = document.getElementById('imageId');
+//     image.src = "data:image/jpeg;base64," + imageData;
+//   }
+//
+//   function onFail(message) {
+//     alert('Failed because: ' + message);
+//   }
+// }
+
+/**
+*选择图片库 imageId显示的ID
+ * url 后台接收地址
+ */
+function fetchPictures(imageId,url) {
+  navigator.camera.getPicture(fetchPictureSuccess, fetchPictureFail, {
     quality: 50,
-    destinationType: Camera.DestinationType.DATA_URL
+    sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,//打开系统的图片库
+    destinationType: 1,
+    saveToPhotoAlbum: true
+
   });
 
-  function onSuccess(imageData) {
-    var image = document.getElementById('myImage');
-    image.src = "data:image/jpeg;base64," + imageData;
+  function fetchPictureSuccess(imageURI) {
+    var image = document.getElementById(imageId);
+    image.src = imageURI;
+    uploadFile(imageURI, imageId,url);
   }
 
-  function onFail(message) {
-    alert('Failed because: ' + message);
+//获取文件失败
+  function fetchPictureFail(message) {
+    alert('获取拍照文件失败:' + message);
   }
 }
+
+
+/**拍照上传***/
+function capturePictures(imageId,url) {
+  navigator.camera.getPicture(takePictureSuccess, takePictureFail, {
+    quality: 50,
+    sourceType: 1,       //拍照
+    destinationType: 1 //存储照片的数据/0data 1url 2native url// 路径
+  });
+
+  function takePictureSuccess(imageURI) {
+    var image = document.getElementById(imageId);
+    image.src = imageURI;
+    uploadFile(imageURI, imageId,url);
+
+  }
+
+//获取文件失败
+  function takePictureFail(message) {
+    alert('获取拍照文件失败:' + message);
+  }
+
+}
+
+/**文件上传start***/
+function uploadFile(imageURI,imageId,url) {
+  if (imageURI === null || imageURI === undefined || imageURI === '') {
+    return;
+  }
+  if (url === null || url === undefined || url === '') {
+    return;
+  }
+
+  function fileTransferSuccess() {
+  }
+
+  function fileTransferError(error) {
+    alert("出现网络异常，异常代码" + error.code);
+  }
+
+  var fileUploadOptions = new FileUploadOptions();
+  fileUploadOptions.fileKey = "file";
+  fileUploadOptions.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+  fileUploadOptions.mimeType = "image/jpeg";
+  var fileTransfer = new FileTransfer();
+  fileTransfer.upload(imageURI, url, fileTransferSuccess, fileTransferError, fileUploadOptions);
+}
 export {
-  cameraTakePicture
+  capturePictures,fetchPictures
 }
