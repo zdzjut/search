@@ -15,7 +15,7 @@
 // }
 
 /**
-*选择图片库 imageId显示的ID
+* 选择图片库 imageId显示的ID
  * url 后台接收地址
  */
 function fetchPictures(imageId,url) {
@@ -40,7 +40,9 @@ function fetchPictures(imageId,url) {
 }
 
 
-/**拍照上传***/
+/**
+ * 拍照上传
+ */
 function capturePictures(imageId,url) {
   navigator.camera.getPicture(takePictureSuccess, takePictureFail, {
     quality: 50,
@@ -62,7 +64,9 @@ function capturePictures(imageId,url) {
 
 }
 
-/**文件上传start***/
+/**
+ * 文件上传start
+ */
 function uploadFile(imageURI,imageId,url) {
   if (imageURI === null || imageURI === undefined || imageURI === '') {
     return;
@@ -85,6 +89,52 @@ function uploadFile(imageURI,imageId,url) {
   var fileTransfer = new FileTransfer();
   fileTransfer.upload(imageURI, url, fileTransferSuccess, fileTransferError, fileUploadOptions);
 }
+
+/**
+ * 弹出框
+ */
+/**
+ *
+ * @param message
+ * @param title
+ * @param buttonName 确认按钮名称，用来关闭
+ */
+function warn(message,title,buttonName) {
+  navigator.notification.alert(message, alertCallback, title, buttonName);
+  function alertCallback() {
+  }
+}
+//当按下 CONFIRM 按钮时，将弹出新对话框。
+/**
+ *
+ * @param message
+ * @param title
+ * @param buttonLabels 一个字符串数组   ["YES","NO"];
+ */
+function dialogConfirm(message,title,buttonLabels) {
+  navigator.notification.confirm(message, confirmCallback, title, buttonLabels);
+
+  function confirmCallback(buttonIndex) {
+  }
+
+}
+//允许用户在对话框输入元素中键入文本。
+function dialogPrompt(message,title,buttonLabels,defaultText) {
+  navigator.notification.prompt(message, promptCallback, title, buttonLabels, defaultText);
+
+  function promptCallback(result) {
+  }
+
+}
+
+/**
+ * 振动
+ */
+function dialogBeep() {
+  var times = 2;
+  navigator.notification.beep(times);
+}
+
 export {
-  capturePictures,fetchPictures
+  capturePictures,fetchPictures,warn,dialogConfirm,dialogPrompt,dialogBeep
 }

@@ -1,6 +1,7 @@
 <template>
   <div>
     <input type="text" value="" v-model="id"/>
+    <button @click="deep()">Take picture</button>
     <button @click="camera('myImage',null)">Take picture</button>
     <img id="myImage"/>
     <button @click="fetch('myImage1',null)">fetch picture</button>
@@ -25,6 +26,7 @@
 
   import {capturePictures} from "../../static/cordovaplugin"
   import {fetchPictures} from "../../static/cordovaplugin"
+  import {dialogBeep} from "../../static/cordovaplugin"
 
 
   export default {
@@ -37,6 +39,9 @@
       }
     },
     methods: {
+      deep:function () {
+        dialogBeep();
+      },
       camera:function(imageId,url){
         capturePictures(imageId,url);
       },
