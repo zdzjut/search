@@ -13,6 +13,7 @@
         list:this.introduceList
       }
     },
+    // 传递数据
     props: ['introduceList']
   }
 
