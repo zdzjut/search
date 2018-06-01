@@ -1,7 +1,11 @@
 <template>
   <header class="header">
-      <span class="left"></span>
+    <router-link :to="{ path: '/test'}">
+        <span class="left"></span>
+    </router-link>
+    <router-link :to="{ path: '/test'}">
       <span class="right"></span>
+    </router-link>
   </header>
 </template>
 <style scoped>
@@ -13,18 +17,18 @@
     overflow:hidden;
   }
   .left{
-    width:3rem;
-    height:3rem;
-    border:0.1rem solid #1380cb;
+    width:2rem;
+    height:2rem;
     float:left;
-    margin-top:0.9rem;
+    margin-top:1.5rem;
+    background:url("../../src/assets/left.png");
   }
   .right{
-    width:3rem;
-    height:3em;
-    border:0.1rem solid #1380cb;
+    width:2rem;
+    height:2em;
     float:right;
-    margin-top:0.9rem;
+    margin-top:1.5rem;
+    background:url("../../src/assets/right.png");
   }
 </style>
 

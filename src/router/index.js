@@ -4,6 +4,7 @@ import Index from '@/page/fight/index'
 import Content from '@/page/content'
 import Todolist from '@/page/todolist'
 
+
 Vue.use(Router);
 
 export default new Router({
@@ -14,24 +15,11 @@ export default new Router({
     }, {
       path: '/content',
       component: Content
-    }, {
-      path: '/todolist',
-      component: Todolist
-    }, {
-      path: '/todolist',
-      component: Todolist
-    }, {
-      path: '/todolist',
-      component: Todolist
-    }, {
-      path: '/todolist',
-      component: Todolist
-    }, {
-      path: '/todolist',
-      component: Todolist
-    }, {
+    },
+    {
       path: '/todolist',
       component: Todolist
     },
+
   ]
 })

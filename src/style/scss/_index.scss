@@ -7,6 +7,9 @@ body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, 
 article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section {
   display: block;
 }
+ol,ul{
+  list-style-type:none;
+}
 html{
   height: 100%;
   width: 100%;
