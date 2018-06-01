@@ -55,13 +55,15 @@
 
 
       search: function () {
-        this.axios.get('/test?test=wrong')
+        let myself = this;
+        // this.axios.get('/test?test=wrong')
+        this.axios.get('/ttt')
           .then(function (response) {
             console.log(response);
-            alert(response.data);
+            myself.testText = response.data;
           }).catch(function (response) {
-            console.log(response);
-          });
+          console.log(response);
+        });
       }
     }
   }

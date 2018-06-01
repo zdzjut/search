@@ -1,3 +1,4 @@
+//做为父组件 向子组件传递参数introduceList
 <template>
   <div>
     {{msg}}
@@ -7,7 +8,7 @@
 </template>
 
 <script>
-  import introduceList from '../components/function/list'
+  import introduceList from '../components/function/introduceList'
 
   export default {
     name: "content",

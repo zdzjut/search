@@ -1,19 +1,3 @@
-// function cameraTakePicture(imageId) {
-//   navigator.camera.getPicture(onSuccess, onFail, {
-//     quality: 50,
-//     destinationType: Camera.DestinationType.DATA_URL
-//   });
-//
-//   function onSuccess(imageData) {
-//     var image = document.getElementById('imageId');
-//     image.src = "data:image/jpeg;base64," + imageData;
-//   }
-//
-//   function onFail(message) {
-//     alert('Failed because: ' + message);
-//   }
-// }
-
 /**
 * 选择图片库
  * imageId显示的ID
@@ -119,7 +103,9 @@ function dialogConfirm(message,title,buttonLabels) {
   }
 
 }
-//允许用户在对话框输入元素 中键入文本。
+/**
+ * 允许用户在对话框输入元素 中键入文本
+ */
 function dialogPrompt(message,title,buttonLabels,defaultText) {
   navigator.notification.prompt(message, promptCallback, title, buttonLabels, defaultText);
 

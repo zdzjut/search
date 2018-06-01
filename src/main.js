@@ -11,13 +11,11 @@ import axios from 'axios';
  * 绑定地址
  * @type {AxiosStatic}
  */
-Vue.prototype.axios = axios
-axios.defaults.baseURL = '/api'
+Vue.prototype.axios = axios;
+axios.defaults.baseURL = '/api';
 
 Vue.use(VueResource);
 // 将API方法绑定到全局
-// Vue.prototype.$api = api;
-// Vue.config.productionTip = false;
 
 // console.info(VueCordova);
 // Vue.use(VueCordova);

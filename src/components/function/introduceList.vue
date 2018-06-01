@@ -7,7 +7,7 @@
 </template>
 <script>
   export default {
-    name: 'zdList',
+    name: 'introduceList',
     data: function () {
       return {
         list:this.introduceList
