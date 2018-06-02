@@ -1,13 +1,44 @@
 <template>
   <header class="header">
-    <router-link :to="{ path: '/test'}">
+    <router-link :to="{ path: '/addUser'}">
         <span class="left"></span> <!--添加-->
     </router-link>
-    <router-link :to="{ path: '/test'}">
-      <span class="right"></span><!--退出-->
-    </router-link>
+    <button @click="exit()"><span class="right"></span></button>
   </header>
 </template>
+<script>
+  import {dialogConfirm} from "../../static/cordovaplugin"
+
+  export default {
+    name: 'first',
+    data() {
+      return {
+        message: '',
+        summary: '',
+        id: '',
+        testText: '',
+      }
+    },
+    methods: {
+
+      dialogConfirm: function (message, title, buttonLabels, defaultText) {
+        dialogConfirm(message, title, buttonLabels, defaultText);
+      },
+
+      search: function () {
+        let myself = this;
+        // this.axios.get('/test?test=wrong')
+        this.axios.get('/ttt')
+          .then(function (response) {
+            console.log(response);
+            myself.testText = response.data;
+          }).catch(function (response) {
+          console.log(response);
+        });
+      }
+    }
+  }
+</script>
 <style scoped>
   @import "../style/scss/_index.scss";
   .header{
