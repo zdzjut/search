@@ -4,7 +4,7 @@
     <Header></Header>
     <!--<First></First>-->
     <BodyList></BodyList>
-    <data-list v-bind:myurl="myurl"></data-list>
+    <!--<data-list v-bind:myurl="myurl"></data-list>-->
   </div>
 </template>
 <script>
