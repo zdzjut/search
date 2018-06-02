@@ -1,12 +1,12 @@
 <!--从后台取数据-->
 <template>
   <div>
-    <a @click="search">按钮</a>
     <ul>
       <li v-for="item in dataToList" >
         <span v-text="item.id"></span>
         <span v-text="item.name"></span>
         <span v-text="item.address"></span>
+
       </li>
     </ul>
   </div>
@@ -18,24 +18,29 @@
       data() {
         return {
           dataToList: '[]',
+          myurl:'',
         }
       },
-      // mounted:function(){
-      //   this.search();
-      // },
+      created:function(){
+        this.search();
+      },
+
       methods: {
         search: function () {
           let myself = this;
-          this.axios.get('/ttt')
-            .then(function (response) {
+          let myurl=this.myurl;
+          this.axios.get(myurl).then(function (response) {
               console.log(response);
               myself.dataToList = response.data;
             }).catch(function (response) {
             console.log(response);
           });
         }
-      }
+      },
+      // 传递数据，本组件标签传递过去后 v-bind：props 对应的值，就能传递相应的数据过来
+      props: ['myurl']
     }
+
 </script>
 
 <style scoped>

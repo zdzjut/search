@@ -36,7 +36,7 @@
         message: '',
         summary: '',
         id: '',
-        testText: '123',
+        testText: '',
       }
     },
     methods: {
