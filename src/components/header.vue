@@ -1,10 +1,10 @@
 <template>
   <header class="header">
     <router-link :to="{ path: '/test'}">
-        <span class="left"></span>
+        <span class="left"></span> <!--添加-->
     </router-link>
     <router-link :to="{ path: '/test'}">
-      <span class="right"></span>
+      <span class="right"></span><!--退出-->
     </router-link>
   </header>
 </template>

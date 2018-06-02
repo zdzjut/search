@@ -11,6 +11,7 @@
 </template>
 
 <script>
+  //本地缓存的使用
   import Store from "../../utils/store";
 
   export default {

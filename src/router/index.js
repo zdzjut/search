@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/fight/index'
-import Content from '@/page/content'
 import Todolist from '@/page/todolist'
 
 
@@ -12,9 +11,6 @@ export default new Router({
     {
       path: '/',
       component: Index
-    }, {
-      path: '/content',
-      component: Content
     },
     {
       path: '/todolist',
