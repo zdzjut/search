@@ -1,9 +1,9 @@
 /**
-* 选择图片库
+ * 选择图片库
  * imageId显示的ID
  * url 后台接收地址
  */
-function fetchPictures(imageId,url) {
+function fetchPictures(imageId, url) {
   navigator.camera.getPicture(fetchPictureSuccess, fetchPictureFail, {
     quality: 50,
     sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,//打开系统的图片库
@@ -15,7 +15,7 @@ function fetchPictures(imageId,url) {
   function fetchPictureSuccess(imageURI) {
     var image = document.getElementById(imageId);
     image.src = imageURI;
-    uploadFile(imageURI, imageId,url);
+    uploadFile(imageURI, imageId, url);
   }
 
 //获取文件失败
@@ -28,7 +28,7 @@ function fetchPictures(imageId,url) {
 /**
  * 拍照上传
  */
-function capturePictures(imageId,url) {
+function capturePictures(imageId, url) {
   navigator.camera.getPicture(takePictureSuccess, takePictureFail, {
     quality: 50,
     sourceType: 1,       //拍照
@@ -38,7 +38,7 @@ function capturePictures(imageId,url) {
   function takePictureSuccess(imageURI) {
     var image = document.getElementById(imageId);
     image.src = imageURI;
-    uploadFile(imageURI, imageId,url);
+    uploadFile(imageURI, imageId, url);
 
   }
 
@@ -52,7 +52,7 @@ function capturePictures(imageId,url) {
 /**
  * 文件上传start
  */
-function uploadFile(imageURI,imageId,url) {
+function uploadFile(imageURI, imageId, url) {
   if (imageURI === null || imageURI === undefined || imageURI === '') {
     return;
   }
@@ -84,11 +84,13 @@ function uploadFile(imageURI,imageId,url) {
  * @param title
  * @param buttonName 确认按钮名称，用来关闭
  */
-function warn(message,title,buttonName) {
+function warn(message, title, buttonName) {
   navigator.notification.alert(message, alertCallback, title, buttonName);
+
   function alertCallback() {
   }
 }
+
 //当按下 CONFIRM 按钮时，将弹出新对话框。
 /**
  *
@@ -96,17 +98,19 @@ function warn(message,title,buttonName) {
  * @param title
  * @param buttonLabels 一个字符串数组   ["YES","NO"];
  */
-function dialogConfirm(message,title,buttonLabels) {
+function dialogConfirm(message, title, buttonLabels) {
   navigator.notification.confirm(message, confirmCallback, title, buttonLabels);
 
   function confirmCallback(buttonIndex) {
   }
 
 }
+
 /**
- * 允许用户在对话框输入元素 中键入文本
+ * 允许用户在对话框输入元素 中键入文本,
+ * 回调函数是异步方法
  */
-function dialogPrompt(message,title,buttonLabels,defaultText) {
+function dialogPrompt(message, title, buttonLabels, defaultText) {
   navigator.notification.prompt(message, promptCallback, title, buttonLabels, defaultText);
 
   function promptCallback(result) {
@@ -122,7 +126,62 @@ function dialogBeep() {
   navigator.notification.beep(times);
 }
 
+/**
+ * 退出
+ */
+function exit() {
+  navigator.notification.confirm("确认退出？", confirmCallback, "确认", ["是", "否"]);
+
+  function confirmCallback(buttonIndex) {
+    alert("buttonIndex" + buttonIndex);
+
+    if (buttonIndex === 1) {
+      navigator.app.exitApp();
+    }
+  }
+}
+
+
+/**
+ * 弹窗提示
+ */
+function showShortTop(message) {
+  window.plugins.toast.showShortCenter(message);
+}
+
+function showShortCenter(message) {
+  window.plugins.toast.showShortCenter(message);
+}
+
+function showShortBottom(message) {
+  window.plugins.toast.showShortCenter(message);
+}
+
+function showLongTop(message) {
+  window.plugins.toast.showShortCenter(message);
+}
+
+function showLongCenter(message) {
+  window.plugins.toast.showShortCenter(message);
+}
+
+function showLongBottom(message) {
+  window.plugins.toast.showShortCenter(message);
+}
+
 
 export {
-  capturePictures,fetchPictures,warn,dialogConfirm,dialogPrompt,dialogBeep
+  capturePictures,
+  fetchPictures,
+  warn,
+  dialogConfirm,
+  dialogPrompt,
+  dialogBeep,
+  exit,
+  showShortTop,
+  showShortCenter,
+  showShortBottom,
+  showLongTop,
+  showLongCenter,
+  showLongBottom
 }

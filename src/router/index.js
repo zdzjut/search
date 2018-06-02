@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/page/fight/index'
+import AddUser from '@/page/fight/addUser'
 import Todolist from '@/page/todolist'
 
 
@@ -11,6 +12,9 @@ export default new Router({
     {
       path: '/',
       component: Index
+    },{
+      path: '/addUser',
+      component: AddUser
     },
     {
       path: '/todolist',
