@@ -1,35 +1,29 @@
 <!--内部页面的头部-->
 <template>
   <header class="header">
-    <span class="left" @click="addUser()"></span>
-
-    <span class="right" @click="fightExit()"></span>
+    <span class="left" @click="back()"></span>
+    <span class="mid" v-text="title"></span>
   </header>
 </template>
 <script>
-  import {exit} from "../../static/cordovaplugin"
-  import {dialogPrompt} from "../../static/cordovaplugin"
-
   export default {
-    name: 'first',
+    title: 'fightHeader',
     data() {
       return {
         message: '',
-        summary: '',
-        id: '',
-        testText: '',
+        title: '',
+
       }
     },
     methods: {
-
-      fightExit: function () {
-        exit();
+      back: function () {
+        history.back();
       },
-      addUser: function () {
-        let username = dialogPrompt("输入全名", "添加用户", ["是", "否"], "");
-        alert(username);
-      }}
-    }
+
+    },
+    props: ["title"]
+
+  }
 </script>
 <style scoped>
   @import "../style/scss/_index.scss";
@@ -55,6 +49,12 @@
     float: right;
     margin-top: 1.5rem;
     background: url("../../src/assets/right.png");
+  }
+  .mid {
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    margin-top: 1.5rem;
   }
 </style>
 

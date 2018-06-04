@@ -2,7 +2,7 @@
 <template>
   <div>
     <fight-header v-bind:title="title"></fight-header>
-    <router-link :to="{ path: '/choosePerson'}"><span>选择</span></router-link>
+    <h1>选4个人</h1>
   </div>
 </template>
 
@@ -11,13 +11,15 @@
   import FightHeader from "../../components/fightHeader"
 
   export default {
-    name: "new-game",
+    name: "choose-person",
     data() {
       return {
-        title: '新的一局',
+        title: '选择聚众人员',
       }
     },
-    methods: {},
+    methods: {
+
+    },
     components: {
       FightHeader
     }
