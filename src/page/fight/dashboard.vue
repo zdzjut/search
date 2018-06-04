@@ -1,11 +1,11 @@
-<!--继续-->
+<!--以用户作为横坐标的图表-->
 <template>
 
 </template>
 
 <script>
     export default {
-        name: "continue"
+        name: "dashboard"
     }
 </script>
 

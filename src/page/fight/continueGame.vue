@@ -1,26 +1,26 @@
-//新的一局
+<!--继续-->
 <template>
   <div>
     <fight-header v-bind:title="title"></fight-header>
-    <router-link :to="{ path: '/game/1'}">
-     <h1>前往列表</h1>
-    </router-link>
+    <button @click="test()">测试</button>
   </div>
 </template>
 
 <script>
-
   import FightHeader from "../../components/fightHeader"
 
   export default {
-    name: "choose-person",
+    name: "continueGame",
     data() {
       return {
-        title: '选择聚众人员',
+        title: '正在进行列表',
       }
     },
     methods: {
+      test: function () {
+        this.$router.push({path: '/game/2'})
 
+      }
     },
     components: {
       FightHeader

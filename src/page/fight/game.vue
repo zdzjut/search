@@ -14,7 +14,7 @@
   import DataList from '../../components/function/data-list.vue'
 
   export default {
-    name: "new-game",
+    name: "game",
     data() {
       return {
         title: '新的一局',
@@ -22,7 +22,14 @@
 
       }
     },
-    methods: {},
+    created:function () {
+      this.test();
+    },
+    methods: {
+      test:function () {
+        alert(this.$route.params.id);
+      }
+  },
     components: {
       FightHeader,DataList
     }

@@ -7,7 +7,7 @@
         </router-link>
       </li>
       <li class="CenterLi">
-        <router-link :to="{ path: '/newGame'}">
+        <router-link :to="{ path: '/continueGame'}">
           <img src="../../../src/assets/22.png" alt="">
         </router-link>
       </li>

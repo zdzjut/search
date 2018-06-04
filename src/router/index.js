@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import Index from '@/page/fight/index'
 import AddUser from '@/page/fight/addUser'
 import ChoosePerson from '@/page/fight/choosePerson'
-import NewGame from '@/page/fight/newGame'
+import ContinueGame from '@/page/fight/continueGame'
+import Game from '@/page/fight/game'
 
 import Todolist from '@/page/todolist'
 
@@ -25,12 +26,15 @@ export default new Router({
       component: Todolist
     },
     {
-      path: '/newGame',
-      component: NewGame
+      path: '/game/:id',
+      component: Game
     },
     {
       path: '/choosePerson',
       component: ChoosePerson
+    }, {
+      path: '/continueGame',
+      component: ContinueGame
     },
 
   ]
