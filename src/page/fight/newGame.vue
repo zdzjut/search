@@ -2,24 +2,29 @@
 <template>
   <div>
     <fight-header v-bind:title="title"></fight-header>
-    <router-link :to="{ path: '/choosePerson'}"><span>选择</span></router-link>
+    <data-list></data-list>
+    <!--v-bind:myurl="myurl"-->
+
   </div>
 </template>
 
 <script>
 
   import FightHeader from "../../components/fightHeader"
+  import DataList from '../../components/function/data-list.vue'
 
   export default {
     name: "new-game",
     data() {
       return {
         title: '新的一局',
+        // myurl:'/ttt',
+
       }
     },
     methods: {},
     components: {
-      FightHeader
+      FightHeader,DataList
     }
   }
 </script>

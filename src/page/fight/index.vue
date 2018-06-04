@@ -2,9 +2,8 @@
 <template>
   <div>
     <Header></Header>
-    <!--<First></First>-->
     <BodyList></BodyList>
-    <data-list></data-list>
+    <!--<data-list></data-list>-->
     <!--v-bind:myurl="myurl"-->
   </div>
 </template>

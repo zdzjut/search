@@ -2,7 +2,9 @@
 <template>
   <div>
     <fight-header v-bind:title="title"></fight-header>
-    <h1>选4个人</h1>
+    <router-link :to="{ path: '/newGame'}">
+     <span>前往列表</span>
+    </router-link>
   </div>
 </template>
 

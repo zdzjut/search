@@ -2,7 +2,7 @@
   <div class="Center">
     <ul>
       <li class="CenterLi">
-        <router-link :to="{ path: '/newGame'}">
+        <router-link :to="{ path: '/choosePerson'}">
           <img src="../../../src/assets/11.png" alt="">
         </router-link>
       </li>
