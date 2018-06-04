@@ -23,7 +23,6 @@
   .header {
     width: 100%;
     height: 5rem;
-    border: 0.1rem solid #333;
     overflow: hidden;
     text-align: center;
   }
@@ -33,6 +32,7 @@
     height: 2rem;
     float: left;
     margin-top: 1.5rem;
+    margin-left:1rem;
     background: url("../../src/assets/left.png");
   }
   .mid {
@@ -48,6 +48,7 @@
     height: 2em;
     float: right;
     margin-top: 1.5rem;
+    margin-right:1rem;
     background: url("../../src/assets/right.png");
   }
 </style>

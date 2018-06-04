@@ -34,4 +34,7 @@
     height: 13rem;
     margin: 1rem 0 1rem 0.6rem;
   }
+  .CenterLi img{
+    width:100%;
+  }
 </style>
