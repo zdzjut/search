@@ -1,11 +1,13 @@
 <!--内部页面的头部-->
 <template>
   <header class="header">
-    <span class="left" @click="back()"></span>
-    <span class="mid" v-text="title"></span>
+    <span class="AddUsersL" @click="back()"></span>
+    <span class="AddUsersR" v-text="title"></span>
   </header>
 </template>
 <script>
+
+
   export default {
     title: 'fightHeader',
     data() {
@@ -30,31 +32,26 @@
 
   .header {
     width: 100%;
-    height: 5rem;
-    border: 0.1rem solid #333;
-    overflow: hidden;
+    height: 4rem;
+    background:#3492E9;
   }
-
-  .left {
-    width: 2rem;
-    height: 2rem;
-    float: left;
-    margin-top: 1.5rem;
-    background: url("../../src/assets/left.png");
-  }
-
-  .right {
-    width: 2rem;
-    height: 2em;
-    float: right;
-    margin-top: 1.5rem;
-    background: url("../../src/assets/right.png");
-  }
-  .mid {
-    width: 2rem;
-    height: 2rem;
+  .AddUsersL{
     display: inline-block;
-    margin-top: 1.5rem;
+    width:2rem;
+    height:2rem;
+    margin:1rem 0 0 1rem;
+    background: url("../assets/back.png");
+    float:left;
+  }
+  .AddUsersR{
+    display: inline-block;
+    width: 85%;
+    height:4rem;
+    line-height:4rem;
+    color:#fff;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
   }
 </style>
 

@@ -1,79 +1,82 @@
 <!--添加用户-->
 <template>
-  <div class="AddUsers">
-    <nav>
-        <span></span>
-        <p>添加用户</p>
-    </nav>
-    <div class="AddUsersB">
-        <dl class="AddUsersDl">
-          <dt>用户名：</dt>
-          <dd>
-              <input v-model="username" value="" type="text" name="username" />
-          </dd>
-        </dl>
-        <dl class="AddUsersDl">
-          <dt>密码：</dt>
-          <dd>
-              <input v-model="password" value="" type="text" name="password" />
-          </dd>
-        </dl>
-    </div>
-    <div class="AddUsersButton">
-      <button @click="createUser()">提交</button>
-    </div>
+  <div>
+        <fight-header  v-bind:title="title"></fight-header>
+        <div class="AddUsersB">
+              <dl class="AddUsersDl">
+                    <dt>用户名：</dt><dd><input v-model="username" value="" type="text" name="username" /></dd>
+              </dl>
+              <dl class="AddUsersDl">
+                    <dt>密码：</dt><dd><input v-model="password" value="" type="text" name="password" /></dd>
+              </dl>
+        </div>
+        <button @click="createUser()" class="AddUsersButton">提交</button>
   </div>
 </template>
 
 <script>
-
   import {warn} from "../../../static/cordovaplugin"
-
+  import FightHeader from "../../components/fightHeader"
   export default {
-    name: "addUser",
-    data() {
-      return {
-        username: '',
-        password: ''
-      }
-    },
-    methods: {
-      createUser: function () {
-        let username = this.username;
-        let password = this.password;
-        let myurl = '/fight/addUser?username=' + username + '&password=' + password;
-        this.axios.get(myurl).then(function (response) {
-          warn(response, "添加用户结果", "OK")
-        }).catch(function (response) {
-        });
-      },
-    }
+        name: "addUser",
+        data() {
+              return {
+                username: '',
+                password: '',
+                title: '添加用户',
+              }
+        },
+        methods: {
+              createUser: function () {
+                    let username = this.username;
+                    let password = this.password;
+                    let myurl = '/fight/addUser?username=' + username + '&password=' + password;
+                    this.axios.get(myurl).then(function (response) {
+                        warn(response.data.message, "添加用户结果", "OK")
+                    }).catch(function (response) {
+                    });
+              },
+        },
+        components:{
+            FightHeader
+        }
   }
 </script>
 
 <style scoped>
-    .AddUsers{width:100%;}
-    .AddUsers nav{
-      width:100%;
-      height:4rem;
-      background:#3492E9;
-      text-align: center;
+    .AddUsersB{
+        width:100%;
     }
-    nav>span{
-      display: inline-block;
-      width:2rem;
-      height:2rem;
-      border:1px solid #333;
-      margin:1rem 0 0 1rem;
-      float:left;
+    .AddUsersDl{
+        width:100%;
+        height:3rem;
+        line-height:3rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
     }
-    nav>p{
-      display: inline-block;
-      width: 80%;
-      height:4rem;
-      line-height:4rem;
-      color:#fff;
-      font-size: 15px;
-      font-weight: bold;
+    .AddUsersDl dt{
+        display: inline-block;
+        width:28%;
+        text-align: right;
+    }
+    .AddUsersDl dd{
+        width:70%;
+        display: inline-block;
+    }
+    .AddUsersDl dd>input{
+        border: 0.1rem solid #ccc;
+        height: 2rem;
+        width: 60%;
+        border-radius: 0.3rem;
+    }
+    .AddUsersButton{
+        width:100%;
+        height:3rem;
+        background:#3492E9;
+        border:none;
+        font-size: 15px;
+        letter-spacing:1rem;
+        color:#fff;
+        margin-top:1rem;
     }
 </style>
