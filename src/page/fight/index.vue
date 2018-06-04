@@ -4,7 +4,8 @@
     <Header></Header>
     <!--<First></First>-->
     <BodyList></BodyList>
-    <!--<data-list v-bind:myurl="myurl"></data-list>-->
+    <data-list></data-list>
+    <!--v-bind:myurl="myurl"-->
   </div>
 </template>
 <script>
@@ -18,7 +19,7 @@
     name: "index",
     data() {
       return {
-        myurl:'/ttt',
+        // myurl:'/ttt',
       }
     },
     components: {
