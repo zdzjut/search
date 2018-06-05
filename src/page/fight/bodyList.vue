@@ -29,40 +29,41 @@
 
 
   export default {
-    name: "addUser",
-    data() {
-      return {
-        username: '',
-        password: '',
-        title: '添加用户',
-      }
-    },
-    methods: {
-      checkUser: function () {
+      name: "addUser",
+      data() {
+          return {
+              username: '',
+              password: '',
+              title: '添加用户',
+          }
+      },
+      methods: {
+          checkUser: function () {
 //开发时放开
-        this.$router.push({path: '/choosePerson'})
+              this.$router.push({path: '/choosePerson'})
 
-        // let user = Store.getMap("user");
-        // if (user == null || user === undefined) {
-        //   this.$router.push({path: '/login'})
-        // } else {
-        //   this.$router.push({path: '/choosePerson'})
-        // }
-      },
-      checkPersonal: function () {
+              /* let user = Store.getMap("user");
+        if (user == null || user === undefined) {
+          this.$router.push({path: '/login'})
+        } else {
+          this.$router.push({path: '/choosePerson'})
+        }*/
+          },
+          checkPersonal: function () {
 //开发时放开
-        this.$router.push({path: '/personal'})
-        // let user = Store.getMap("user");
-        // if (user == null || user === undefined) {
-        //   this.$router.push({path: '/login'})
-        // } else {
-        //   this.$router.push({path: '/personal'})
-        // }
-      },
-    },
-    components: {
-      FightHeader
-    }
+              this.$router.push({path: '/choosePerson'})
+              /*let user = Store.getMap("user");
+        if (user == null || user === undefined) {
+          this.$router.push({path: '/login'})
+        } else {
+          this.$router.push({path: '/personal'})
+        }
+      },*/
+          },
+          components: {
+              FightHeader
+          }
+      }
   }
 </script>
 <style scoped>
