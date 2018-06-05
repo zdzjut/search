@@ -3,7 +3,7 @@
     <ul>
       <li class="CenterLi">
         <!--<router-link :to="{ path: '/choosePerson'}">-->
-          <img src="../../../src/assets/11.png" alt="" @click="checkUser()">
+        <img src="../../../src/assets/11.png" alt="" @click="checkUser()">
         <!--</router-link>-->
       </li>
       <li class="CenterLi">
@@ -17,16 +17,13 @@
         </router-link>
       </li>
       <li class="CenterLi">
-        <router-link :to="{ path: '/newGame'}">
-          <img src="../../../src/assets/44.png" alt="">
-        </router-link>
+        <img src="../../../src/assets/44.png" alt="" @click="checkPersonal()">
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-  import {warn} from "../../../static/cordovaplugin"
   import FightHeader from "../../components/fightHeader"
   import Store from "../../utils/store";
 
@@ -43,15 +40,24 @@
     methods: {
       checkUser: function () {
 //开发时放开
-        this.$router.push({path: '/choosePerson'})
+//         this.$router.push({path: '/choosePerson'})
 
-        // user: user:{id:1,name:'hello'}
-      // let user=  Store.getMap("user");
-      // if (user==null||user===undefined){
-      //   this.$router.push({path: '/login'})
-      // }else {
-      //   this.$router.push({path: '/choosePerson'})
-      // }
+        let user = Store.getMap("user");
+        if (user == null || user === undefined) {
+          this.$router.push({path: '/login'})
+        } else {
+          this.$router.push({path: '/choosePerson'})
+        }
+      },
+      checkPersonal: function () {
+//开发时放开
+//         this.$router.push({path: '/choosePerson'})
+        let user = Store.getMap("user");
+        if (user == null || user === undefined) {
+          this.$router.push({path: '/login'})
+        } else {
+          this.$router.push({path: '/personal'})
+        }
       },
     },
     components: {
@@ -68,7 +74,8 @@
     width: 96%;
     margin: 1rem 0 1rem 0.6rem;
   }
-  .CenterLi img{
-    width:100%;
+
+  .CenterLi img {
+    width: 100%;
   }
 </style>

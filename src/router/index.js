@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '@/page/fight/index'
 import AddUser from '@/page/fight/addUser'
 import ModifyUser from '@/page/fight/modifyUser'
+import Personal from '@/page/fight/personal'
 import ChoosePerson from '@/page/fight/choosePerson'
 import ContinueGame from '@/page/fight/continueGame'
 import Game from '@/page/fight/game'
@@ -43,6 +44,9 @@ export default new Router({
     },{
       path: '/login',
       component: Login
+    },{
+      path: '/personal',
+      component: Personal
     },
 
   ]

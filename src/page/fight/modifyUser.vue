@@ -43,8 +43,12 @@
         this.password = user.password;
         let myurl = '/fight/modify?username=' + username + '&password=' + password;
         this.axios.get(myurl).then(function (response) {
-          warn(response.data.message, "修改用户名密码", "OK");
-          this.$router.push({path: '/'})
+          if (response.data.result === 1) {
+            let user = response.data.data();
+            Store.setMap("user", user);
+            warn(response.data.message, "修改用户名密码", "OK");
+          }
+          this.$router.push({path: '/person'})
         }).catch(function (response) {
         });
       },

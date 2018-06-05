@@ -41,10 +41,10 @@
           if(response.data.result===1){
             warn(response.data.message, "登录成功", "OK");
             Store.setMap("user",response.data.data);
-            myself.$router.push({path: '/choosePerson'})
+            myself.$router.push({path: '/'})
           }else {
             Store.removeMap("user");
-            warn(response.data.message, "登录失败", "BACK");
+            warn(response.data.message, "登录失败", "CONTINUE");
           }
         }).catch(function (response) {
         });
