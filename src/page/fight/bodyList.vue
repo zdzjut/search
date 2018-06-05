@@ -42,13 +42,16 @@
     },
     methods: {
       checkUser: function () {
-        // user: user:{id:1,name:'hello'}
-      let user=  Store.getMap("user");
-      if (user==null||user===undefined){
-        this.$router.push({path: '/login'})
-      }else {
+//开发时放开
         this.$router.push({path: '/choosePerson'})
-      }
+
+        // user: user:{id:1,name:'hello'}
+      // let user=  Store.getMap("user");
+      // if (user==null||user===undefined){
+      //   this.$router.push({path: '/login'})
+      // }else {
+      //   this.$router.push({path: '/choosePerson'})
+      // }
       },
     },
     components: {

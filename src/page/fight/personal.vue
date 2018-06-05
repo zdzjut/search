@@ -10,23 +10,33 @@
 
 <script>
   import Store from '../../utils/store'
+
   export default {
     name: "personal",
     data() {
       return {
-        username:'',
-        balance:'',
+        username: '',
+        balance: '',
       }
     },
-    methods:{
-      toModify:function () {
-      this.$router.push({path:'/modifyUser'});
+    created: function () {
+      this.showUser();
+    },
+    methods: {
+      toModify: function () {
+        this.$router.push({path: '/modifyUser'});
       },
-      logout:function () {
+      logout: function () {
         Store.removeMap("user");
-        this.$router.push({path:'/'});
+        this.$router.push({path: '/'});
+      },
+      showUser: function () {
+        let user = Store.getMap("user");
+        this.username=user.name;
+        this.balance=user.balance;
 
       }
+
     }
   }
 </script>
