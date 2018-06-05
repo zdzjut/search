@@ -63,7 +63,6 @@
 
   .CenterLi {
     width: 96%;
-    height: 13rem;
     margin: 1rem 0 1rem 0.6rem;
   }
   .CenterLi img{
