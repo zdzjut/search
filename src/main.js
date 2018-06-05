@@ -9,7 +9,8 @@ import axios from 'axios';
  * 绑定地址,全局请求前部带上ip和端口
  */
 Vue.prototype.axios = axios;
-axios.defaults.baseURL = 'http://192.169.40.99:7088';
+// axios.defaults.baseURL = 'http://192.169.40.99:7088';
+axios.defaults.baseURL = 'http://192.168.199.241:7088';
 
 Vue.use(VueResource);
 Vue.use(VueCordova);

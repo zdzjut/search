@@ -45,10 +45,11 @@
       createUser: function () {
         let username = this.username;
         let password = this.password;
+        let myself=this;
         let myurl = '/fight/addUser?username=' + username + '&password=' + password;
         this.axios.get(myurl).then(function (response) {
           warn(response.data.message, "添加用户结果", "OK");
-          this.$router.push({path: '/'})
+          myself.$router.push({path: '/'})
         }).catch(function (response) {
         });
       },

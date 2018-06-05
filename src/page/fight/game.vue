@@ -29,6 +29,9 @@
     methods: {
       test:function () {
         alert(this.$route.params.id);
+      },
+      add:function () {
+
       }
   },
     components: {
