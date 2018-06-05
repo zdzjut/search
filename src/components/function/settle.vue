@@ -2,12 +2,12 @@
   <div>
     <!--@change='changeType'-->
     <!--select的model和option的value保持一致-->
-    <select v-model="landowner">
+    地主:   <select v-model="landowner">
       <option v-for="user in users" v-bind:value="user.id">
         {{ user.name }}
       </option>
     </select>
-    <span>地主: {{ landowner }}</span>
+    <span>{{ landowner }}</span>
   </div>
 </template>
 
@@ -31,9 +31,9 @@
 
       }
     },
-    //function (ele) {  var optionTxt = $(ele.target).find("option:selected").text();
-  // var optionVal = ele.target.value;
-  props: ['user']
+  methods:{
+
+  }
   }
 </script>
 
