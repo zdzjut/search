@@ -133,8 +133,6 @@ function exit() {
   navigator.notification.confirm("确认退出？", confirmCallback, "确认", ["是", "否"]);
 
   function confirmCallback(buttonIndex) {
-    alert("buttonIndex" + buttonIndex);
-
     if (buttonIndex === 1) {
       navigator.app.exitApp();
     }

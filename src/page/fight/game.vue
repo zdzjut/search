@@ -3,6 +3,7 @@
   <div>
     <fight-header v-bind:title="title"></fight-header>
     <data-list></data-list>
+    <h1>一个退出按钮，不退出其他无法记账</h1>
     <!--v-bind:myurl="myurl"-->
 
   </div>

@@ -13,7 +13,9 @@ axios.defaults.baseURL = 'http://192.169.40.99:7088';
 
 Vue.use(VueResource);
 Vue.use(VueCordova);
+
 // document.addEventListener('deviceready', function () {
+
   new Vue({
     el: '#app',
     router,

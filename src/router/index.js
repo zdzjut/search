@@ -5,6 +5,7 @@ import AddUser from '@/page/fight/addUser'
 import ChoosePerson from '@/page/fight/choosePerson'
 import ContinueGame from '@/page/fight/continueGame'
 import Game from '@/page/fight/game'
+import Login from '@/page/fight/login'
 
 import Todolist from '@/page/todolist'
 
@@ -12,7 +13,7 @@ import Todolist from '@/page/todolist'
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
@@ -35,6 +36,9 @@ export default new Router({
     }, {
       path: '/continueGame',
       component: ContinueGame
+    },{
+      path: '/login',
+      component: Login
     },
 
   ]
