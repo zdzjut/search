@@ -25,9 +25,9 @@
         myurl: '',
       }
     },
-    created: function () {
-      this.search();
-    },
+    // created: function () {
+    //   this.search();
+    // },
 
     // methods: {
     //   search: function () {

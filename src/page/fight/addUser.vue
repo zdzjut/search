@@ -49,7 +49,9 @@
         let myurl = '/fight/addUser?username=' + username + '&password=' + password;
         this.axios.get(myurl).then(function (response) {
           warn(response.data.message, "添加用户结果", "OK");
-          myself.$router.push({path: '/'})
+          if (response.result===1){
+            myself.$router.push({path: '/'})
+          }
         }).catch(function (response) {
         });
       },

@@ -34,7 +34,7 @@
       }
     },
     created: function () {
-      showUser();
+      this.showUser();
     },
     methods: {
       showUser: function () {
@@ -43,7 +43,7 @@
         this.password = user.password;
         let myurl = '/fight/modify?username=' + username + '&password=' + password;
         this.axios.get(myurl).then(function (response) {
-          warn(response.data.message, "添加用户结果", "OK");
+          warn(response.data.message, "修改用户名密码", "OK");
           this.$router.push({path: '/'})
         }).catch(function (response) {
         });
