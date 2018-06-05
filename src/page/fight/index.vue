@@ -2,9 +2,8 @@
 <template>
   <div>
     <Header></Header>
-    <settle></settle>
-
     <BodyList></BodyList>
+    <h5>如果本软件不好用，也请付费</h5>
     <!--<data-list></data-list>-->
     <!--v-bind:myurl="myurl"-->
   </div>
