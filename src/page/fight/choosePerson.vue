@@ -3,7 +3,7 @@
   <div>
     <fight-header v-bind:title="title"></fight-header>
     <router-link :to="{ path: '/game/1'}">
-      <h1>前往列表</h1>
+      <h1>前往列表 </h1>
       </router-link>
     <div class="SelectUsers">
         <Select></Select>
