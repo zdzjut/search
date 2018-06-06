@@ -3,15 +3,25 @@
   <div>
     <fight-header v-bind:title="title"></fight-header>
     <router-link :to="{ path: '/game/1'}">
-     <h1>前往列表</h1>
-    </router-link>
+      <h1>前往列表</h1>
+      </router-link>
     <div class="SelectUsers">
         <Select></Select>
         <div class="SelectUsersC">
             <img src="../../assets/top.png" alt="">
-            <div class="SelectUsersCenter">
 
-                <div class="SelectUsersCDiv">
+
+                <ul class="SelectUsersCenter">
+                    <li class="SelectUsersCDiv" v-for="name in names">
+                        <div class="checkbox-box">
+                            <input name="1" type="checkbox" checked>
+                            <span></span>
+                        </div>
+                        <label v-text="name"></label>
+                    </li>
+                </ul>
+
+                <!--<div class="SelectUsersCDiv">
                     <div class="checkbox-box">
                         <input name="1" type="checkbox" checked>
                         <span></span>
@@ -31,100 +41,9 @@
                         <span></span>
                     </div>
                     <label>王大二</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大三</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大四</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大五</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大六</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大七</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input name="1" type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大柒</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input name="2" type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大捌</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大玖</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大零</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大陆</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大伍</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大肆</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大叁</label>
-                </div>
+                </div>-->
 
-            </div>
+
             <img src="../../assets/bottom.png" alt="">
         </div>
         <div class="SelectUsersF">
@@ -144,6 +63,9 @@
     data() {
       return {
         title: '选择人员',
+          names:[
+              '王大一','王大二','王大三'
+          ],
       }
     },
     methods: {
