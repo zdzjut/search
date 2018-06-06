@@ -14,7 +14,6 @@
   import First from '../../components/first.vue'
   import BodyList from './bodyList.vue'
   import DataList from '../../components/function/data-list.vue'
-  import Settle from '../../components/function/settle.vue'
 
   export default {
     name: "index",
@@ -24,7 +23,7 @@
       }
     },
     components: {
-      Header, First, BodyList, DataList,Settle
+      Header, First, BodyList, DataList
     },
   }
 </script>

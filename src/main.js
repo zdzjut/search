@@ -15,7 +15,7 @@ axios.defaults.baseURL = 'http://192.168.199.241:7088';
 Vue.use(VueResource);
 Vue.use(VueCordova);
 
-// document.addEventListener('deviceready', function () {
+document.addEventListener('deviceready', function () {
 
   new Vue({
     el: '#app',
@@ -30,8 +30,8 @@ Vue.use(VueCordova);
 
 
 //安卓返回键退出方法
-//   document.addEventListener("backbutton", onBackKeyDown, false);
-// }, false);
+  document.addEventListener("backbutton", onBackKeyDown, false);
+}, false);
 
 
 function onBackKeyDown() {
