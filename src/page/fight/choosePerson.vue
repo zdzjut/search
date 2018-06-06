@@ -5,13 +5,131 @@
     <router-link :to="{ path: '/game/1'}">
      <h1>前往列表</h1>
     </router-link>
-    <div>
-        <label><input class="mui-switch" type="checkbox"> 默认未选中</label>
-        <label><input class="mui-switch" type="checkbox" checked> 默认选中</label>
-        <label><input class="mui-switch mui-switch-animbg" type="checkbox"> 默认未选中,简单的背景过渡效果,加mui-switch-animbg类即可</label>
-        <label><input class="mui-switch mui-switch-animbg" type="checkbox" checked> 默认选中</label>
-        <label><input class="mui-switch mui-switch-anim" type="checkbox"> 默认未选中，过渡效果，加 mui-switch-anim类即可</label>
-        <label><input class="mui-switch mui-switch-anim" type="checkbox" checked> 默认选中</label>
+    <div class="SelectUsers">
+        <Select></Select>
+        <div class="SelectUsersC">
+            <img src="../../assets/top.png" alt="">
+            <div class="SelectUsersCenter">
+
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input name="1" type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大仙</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input name="2" type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大一</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大二</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大三</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大四</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大五</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大六</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大七</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input name="1" type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大柒</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input name="2" type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大捌</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大玖</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大零</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大陆</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大伍</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大肆</label>
+                </div>
+                <div class="SelectUsersCDiv">
+                    <div class="checkbox-box">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </div>
+                    <label>王大叁</label>
+                </div>
+
+            </div>
+            <img src="../../assets/bottom.png" alt="">
+        </div>
+        <div class="SelectUsersF">
+            <button>提交</button>
+        </div>
     </div>
   </div>
 </template>
@@ -19,6 +137,7 @@
 <script>
 
   import FightHeader from "../../components/fightHeader"
+  import Select from '../../components/function/select.vue'
 
   export default {
     name: "choose-person",
@@ -31,68 +150,81 @@
 
     },
     components: {
-      FightHeader
+      FightHeader,Select
     }
   }
 </script>
 
 <style scoped>
-    .mui-switch {
-        width: 52px;
-        height: 31px;
-        position: relative;
-        border: 1px solid #dfdfdf;
-        background-color: #fdfdfd;
-        box-shadow: #dfdfdf 0 0 0 0 inset;
-        border-radius: 20px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        background-clip: content-box;
-        display: inline-block;
-        -webkit-appearance: none;
-        user-select: none;
-        outline: none; }
-    .mui-switch:before {
-        content: '';
-        width: 29px;
-        height: 29px;
-        position: absolute;
-        top: 0px;
-        left: 0;
-        border-radius: 20px;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        background-color: #fff;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
-    .mui-switch:checked {
-        border-color: #64bd63;
-        box-shadow: #64bd63 0 0 0 16px inset;
-        background-color: #64bd63; }
-    .mui-switch:checked:before {
-        left: 21px; }
-    .mui-switch.mui-switch-animbg {
-        transition: background-color ease 0.4s; }
-    .mui-switch.mui-switch-animbg:before {
-        transition: left 0.3s; }
-    .mui-switch.mui-switch-animbg:checked {
-        box-shadow: #dfdfdf 0 0 0 0 inset;
-        background-color: #64bd63;
-        transition: border-color 0.4s, background-color ease 0.4s; }
-    .mui-switch.mui-switch-animbg:checked:before {
-        transition: left 0.3s; }
-    .mui-switch.mui-switch-anim {
-        transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s; }
-    .mui-switch.mui-switch-anim:before {
-        transition: left 0.3s; }
-    .mui-switch.mui-switch-anim:checked {
-        box-shadow: #64bd63 0 0 0 16px inset;
-        background-color: #64bd63;
-        transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s; }
-    .mui-switch.mui-switch-anim:checked:before {
-        transition: left 0.3s; }
+    .SelectUsers{
+        width:100%;
+        text-align: center;
+    }
+    .SelectUsersC{
+        width:90%;
+        height:auto;
+        margin-left: 4%;
+        margin-top:1rem;
+    }
+    img{width:100%;}
+    .SelectUsersF{margin-top:3rem;margin-bottom:3rem;}
+    .SelectUsersF button{
+        width:18rem;
+        height:3rem;
+        border:none;
+        border-radius: 1rem;
+        background:#3492E9;
+        color:#fff;
+        font-size: 15px;
+        margin-top:3rem;
+    }
 
+    .SelectUsersCDiv{
+        float: left;
+        width: 48%;
+        margin-bottom:0.1rem;
+    }
+    .SelectUsersCDiv label{
+        font-size: 1.4rem;
+    }
+    .SelectUsersCenter{width:100%;overflow: hidden;}
+    .checkbox-box{
+        display: inline-block;
+        width:1.5rem;
+        height:1.5rem;
+        border-radius: 0.3rem;
+        margin-right:1rem;
+        position: relative;
+        border:0.2rem solid #1aafcc;
+        background:#1aafcc;
+        vertical-align:middle;
+    }
+    .checkbox-box input{
+        opacity: 0;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index:10;
+    }
+    .checkbox-box span{
+        width:1.5rem;
+        height:1.5rem;
+        position: relative;
+    }
+    .checkbox-box span:after{
+        content:"\00a0";
+        display: inline-block;
+        border:0.3rem solid #fff;
+        border-top-width:0;
+        border-right-width:0;
+        width:1.2rem;
+        height:0.8rem;
+        -webkit-transform:rotate(-50deg);
+        -moz-transform:rotate(-50deg);
+        position: absolute;
+        top:1rem;
+        left:-0.7rem;
+    }
+    .checkbox-box input[type="checkbox"] + span{opacity: 0;}
+    .checkbox-box input[type="checkbox"]:checked + span{opacity: 1;}
 </style>
