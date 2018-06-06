@@ -32,7 +32,7 @@ export default new Router({
       component: Todolist
     },
     {
-      path: '/game/:id',
+      path: '/game/:recordId',
       component: Game
     },
     {
