@@ -3,8 +3,8 @@
   <div>
     <fight-header v-bind:title="title"></fight-header>
     <router-link :to="{ path: '/game/1'}">
-      <h1>前往列表 </h1>
-      </router-link>
+        <h1>前往列表 </h1>
+    </router-link>
     <div class="SelectUsers">
         <Select></Select>
         <div class="SelectUsersC">
@@ -12,7 +12,7 @@
                 <ul class="SelectUsersCenter">
                     <li class="SelectUsersCDiv" v-for="user in users">
                         <div class="checkbox-box">
-                            <input name="1" type="checkbox" checked>
+                            <input name="1" type="checkbox" checked/>
                             <span></span>
                         </div>
                         <label v-text="user.name"></label>
