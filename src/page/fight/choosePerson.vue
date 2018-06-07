@@ -9,40 +9,15 @@
         <Select></Select>
         <div class="SelectUsersC">
             <img src="../../assets/top.png" alt="">
-
-
                 <ul class="SelectUsersCenter">
-                    <li class="SelectUsersCDiv" v-for="name in names">
+                    <li class="SelectUsersCDiv" v-for="user in users">
                         <div class="checkbox-box">
                             <input name="1" type="checkbox" checked>
                             <span></span>
                         </div>
-                        <label v-text="name"></label>
+                        <label v-text="user.name"></label>
                     </li>
                 </ul>
-
-                <!--<div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input name="1" type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大仙</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input name="2" type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大一</label>
-                </div>
-                <div class="SelectUsersCDiv">
-                    <div class="checkbox-box">
-                        <input type="checkbox" checked>
-                        <span></span>
-                    </div>
-                    <label>王大二</label>
-                </div>-->
-
 
             <img src="../../assets/bottom.png" alt="">
         </div>
@@ -63,9 +38,13 @@
     data() {
       return {
         title: '选择人员',
-          names:[
-              '王大一','王大二','王大三'
-          ],
+        users:[
+          {id:1,name:'王大锤'},
+          {id:2,name:'王二锤'},
+          {id:3,name:'王三锤'},
+          {id:4,name:'王四锤'}
+        ],
+        chosen:[],
       }
     },
     methods: {
