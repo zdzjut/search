@@ -3,7 +3,7 @@
   <div>
     <Header></Header>
     <BodyList></BodyList>
-    <h5>如果本软件不好用，也请付费</h5>
+    <h5 class="reminder">如果本软件不好用，也请付费</h5>
     <!--<data-list></data-list>-->
     <!--v-bind:myurl="myurl"-->
   </div>
@@ -27,3 +27,13 @@
     },
   }
 </script>
+<style scoped>
+    .reminder{
+        width:100%;
+        height:4rem;
+        line-height:4rem;
+        font-size: 1.5rem;
+        color:#e4393c;
+        text-align: center;
+    }
+</style>
