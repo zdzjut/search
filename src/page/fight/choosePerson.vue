@@ -6,7 +6,7 @@
       <h1>前往列表 </h1>
       </router-link>
     <div class="SelectUsers">
-        <Select></Select>
+        <select-time v-bind:times="times"  v-on:child-say="timemuch"></select-time>
         <div class="SelectUsersC">
             <img src="../../assets/top.png" alt="">
                 <ul class="SelectUsersCenter">
@@ -31,13 +31,15 @@
 <script>
 
   import FightHeader from "../../components/fightHeader"
-  import Select from '../../components/function/select.vue'
+  import SelectTime from '../../components/function/select-time.vue'
+  import CheckBox from '../../components/function/check-box'
 
   export default {
     name: "choose-person",
     data() {
       return {
         title: '选择人员',
+        times:[10,5,20,50,1],
         users:[
           {id:1,name:'王大锤'},
           {id:2,name:'王二锤'},
@@ -45,13 +47,14 @@
           {id:4,name:'王四锤'}
         ],
         chosen:[],
+        timemuch:1,
       }
     },
     methods: {
 
     },
     components: {
-      FightHeader,Select
+      FightHeader,SelectTime,CheckBox
     }
   }
 </script>

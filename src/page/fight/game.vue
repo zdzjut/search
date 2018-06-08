@@ -1,4 +1,4 @@
-//新的一局
+<!--新的一局-->
 <template>
   <div>
     <fight-header v-bind:title="title"></fight-header>
