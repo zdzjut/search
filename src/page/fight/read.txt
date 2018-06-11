@@ -1,6 +1,6 @@
 记账软件:
   列表请求统一使用get请求(对抓包无所畏惧),参数通过拼接到url后传递
-
+ pages页面保持清洁
 
 note:
   this.$router.push({path: '/'}) 方法内跳转
