@@ -32,7 +32,7 @@
         //接收传递过来的参数
         let id = this.$route.params.recordId;
         this.recordId = id;
-        this.myurl = '/fight/showRecord/?recordId=' + id;
+        this.myurl = '/fight/showRecord?recordId=' + id;
       },
     },
     components: {

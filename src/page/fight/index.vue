@@ -1,7 +1,7 @@
 <!--首页-->
 <template>
   <div>
-    <header></header>
+    <headoo></headoo>
     <body-list></body-list>
     <h5 class="reminder">如果本软件不好用，也请付费</h5>
     <!--<data-list></data-list>-->
@@ -10,7 +10,7 @@
 </template>
 <script>
 
-  import Header from '../../components/header'
+  import Headoo from '../../components/header'
   import First from '../../components/first.vue'
   import BodyList from './bodyList.vue'
   import DataList from '../../components/function/data-list.vue'
@@ -23,7 +23,7 @@
       }
     },
     components: {
-      Header, First, BodyList, DataList
+      Headoo, First, BodyList, DataList
     },
   }
 </script>

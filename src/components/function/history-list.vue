@@ -30,7 +30,7 @@
     methods: {
       search: function () {
         let myself = this;
-        let myurl = this.myurl+'?recordId=1';
+        let myurl = this.myurl;
         this.axios.get(myurl).then(function (response) {
           //设定每局结构， { user-list ,list{record-list} },user 第一个是序号
           myself.userList = response.data.data.users;

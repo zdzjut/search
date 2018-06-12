@@ -39,12 +39,15 @@
         let myurl = '/fight/login?username=' + username + '&password=' + password;
         this.axios.get(myurl).then(function (response) {
           if(response.data.result===1){
-            warn(response.data.message, "登录成功", "OK");
+            // warn(response.data.message, "登录成功", "OK");
+            alert("登录成功");
             Store.setMap("user",response.data.data);
             myself.$router.push({path: '/'})
           }else {
             Store.removeMap("user");
-            warn(response.data.message, "登录失败", "CONTINUE");
+            // warn(response.data.message, "登录失败", "CONTINUE");
+            alert("登录失败");
+
           }
         }).catch(function (response) {
         });
