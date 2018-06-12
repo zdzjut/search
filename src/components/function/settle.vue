@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!--@change='changeType'-->
-    <!--select的model和option的value保持一致-->
     地主: <select v-model="landowner">
     <option v-for="user in users" v-bind:value="user.id">
       {{ user.name }}
@@ -12,11 +10,7 @@
       {{ ti.name }}
     </option>
   </select>
-    <span>{{ landowner }}</span>
-    <span>{{ multiply }}</span>
-    <span>局ID：{{ recordId }}</span>
     <button @click="takeNote()">提交</button>
-    <h1>一个退出按钮，不退出其他无法记账</h1>
     <button @click="exitGame()">退出</button>
   </div>
 </template>
@@ -30,17 +24,17 @@
     name: "result",
     data() {
       return {
-        recordId: -1,
         landowner: -1,
+        multiply: 0,
         users: [
-          {id: -1, name: ''},
+          {id: -1, name: '本局地主'},
           {id: 1, name: 'A'},
           {id: 2, name: 'B'},
           {id: 3, name: 'C'},
           {id: 4, name: 'D'},
         ],
         times: [
-          {name: '', value: 0},
+          {name: '输赢倍数', value: 0},
           {name: '赢', value: 1},
           {name: '输', value: -1},
           {name: '赢两倍', value: 2},
@@ -50,8 +44,6 @@
           {name: '赢八倍', value: 8},
           {name: '输八倍', value: -8},
         ],
-        multiply: 10,
-
       }
     },
     methods: {
@@ -67,6 +59,10 @@
           return;
         }
         let user = Store.getMap("user");
+        if (user==null ){
+          showLongCenter('未登录！');
+          return;
+        }
         let myself = this;
         let myurl = '/fight/takeNote?recordId=' + this.recordId + '&landowner=' + landowner + '&times=' + multiply + '&loginUserId' + user.id;
         this.axios.get(myurl).then(function (response) {
