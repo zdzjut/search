@@ -113,9 +113,6 @@
         height:0.8rem;
         -webkit-transform:rotate(-50deg);
         -moz-transform:rotate(-50deg);
-        position: absolute;
-        top:1rem;
-        left:-0.7rem;
     }
     .checkbox-box input[type="checkbox"] + span{opacity: 0;}
     .checkbox-box input[type="checkbox"]:checked + span{opacity: 1;}

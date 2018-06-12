@@ -3,8 +3,7 @@
   <div>
     <fight-header v-bind:title="title"></fight-header>
     <settle v-bind:recordId="recordId"></settle>
-    <data-list     v-bind:myurl="myurl"></data-list>
-
+    <data-list v-bind:myurl="myurl"></data-list>
   </div>
 </template>
 
