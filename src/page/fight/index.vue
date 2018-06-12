@@ -1,8 +1,8 @@
 <!--首页-->
 <template>
   <div>
-    <Header></Header>
-    <BodyList></BodyList>
+    <header></header>
+    <body-list></body-list>
     <h5 class="reminder">如果本软件不好用，也请付费</h5>
     <!--<data-list></data-list>-->
     <!--v-bind:myurl="myurl"-->
