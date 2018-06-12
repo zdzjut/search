@@ -1,6 +1,7 @@
 <!--个人信息-->
 <template>
   <div>
+    <fight-header v-bind:title="title"></fight-header>
     <span>姓名：{{username}}</span>
     <span>余额：{{balance}}</span>
     <button @click="toModify()">修改信息</button>
@@ -10,6 +11,7 @@
 
 <script>
   import Store from '../../utils/store'
+  import FightHeader from '../../components/fightHeader'
 
   export default {
     name: "personal",
@@ -17,6 +19,7 @@
       return {
         username: '',
         balance: '',
+        title: '个人信息',
       }
     },
     created: function () {
@@ -37,7 +40,10 @@
 
       }
 
-    }
+    },
+    components:{
+      FightHeader
+    },
   }
 </script>
 

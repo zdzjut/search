@@ -9,18 +9,18 @@
       </dl>
       <dl class="AddUsersDl">
         <dt>密码：</dt>
-        <dd><input v-model="password" value="" type="text" name="password"/></dd>
+        <dd><input v-model="password" value="" type="text" name="password" placeholder="请输入新密码"/></dd>
       </dl>
     </div>
-    <div class="AddUsersButton">
-      <button @click="createUser()" class="AddUsersButton">提交</button>
-    </div>
+    <commit-button v-bind:myurl="myurl"></commit-button>
+
   </div>
 </template>
 
 <script>
   import {warn} from "../../../static/cordovaplugin"
   import FightHeader from "../../components/fightHeader"
+  import CommitButton from "../../components/function/commit-button"
   import Store from '../../utils/store'
 
 
@@ -31,6 +31,7 @@
         username: '',
         password: '',
         title: '修改用户',
+        myurl: '',
       }
     },
     created: function () {
@@ -40,13 +41,20 @@
       showUser: function () {
         let user = Store.getMap("user");
         this.username = user.name;
+      },
+      modify: function () {
+        let user = Store.getMap("user");
+        let id = user.id;
+        console.log("id:" + id);
+        this.username = user.name;
         this.password = user.password;
-        let myurl = '/fight/modify?username=' + username + '&password=' + password;
+        let myurl = '/fight/modify?id=' + id + '&username=' + user.name + ' &password=' + user.password;
         this.axios.get(myurl).then(function (response) {
           if (response.data.result === 1) {
-            let user = response.data.data();
+            let user = response.data.data;
             Store.setMap("user", user);
-            warn(response.data.message, "修改用户名密码", "OK");
+            // warn(response.data.message, "修改用户名密码", "OK");
+            alert("修改成功");
           }
           this.$router.push({path: '/person'})
         }).catch(function (response) {
@@ -54,7 +62,7 @@
       },
     },
     components: {
-      FightHeader
+      FightHeader, CommitButton
     }
   }
 </script>
