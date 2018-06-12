@@ -12,7 +12,7 @@
                 <ul class="SelectUsersCenter">
                     <li class="SelectUsersCDiv" v-for="user in users">
                         <div class="checkbox-box">
-                            <input name="1" type="checkbox" checked/>
+                            <input name="1" type="checkbox" value="user.id" checked/>
                             <span></span>
                         </div>
                         <label v-text="user.name"></label>
@@ -39,18 +39,25 @@
       return {
         title: '选择人员',
         times:[10,5,20,50,1],
-        users:[
-          {id:1,name:'王大锤'},
-          {id:2,name:'王二锤'},
-          {id:3,name:'王三锤'},
-          {id:4,name:'王四锤'}
-        ],
+        users:[],
         chosen:[],
         timemuch:1,
       }
     },
+    created:function () {
+      this.showAll();
+    },
     methods: {
+      showAll:function () {
+        let myself = this;
+        let myurl = '/fight/showUserList';
+        this.axios.get(myurl).then(function (response) {
+          myself.users = response.data.data;
 
+        }).catch(function (response) {
+          console.log(response);
+        });
+      }
     },
     components: {
       FightHeader,SelectTime,CheckBox,CommitButton
