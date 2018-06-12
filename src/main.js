@@ -10,7 +10,8 @@ import axios from 'axios';
  */
 Vue.prototype.axios = axios;
 // axios.defaults.baseURL = 'http://192.169.40.99:7088';
-axios.defaults.baseURL = 'http://192.168.199.241:7088';
+// axios.defaults.baseURL = 'http://192.168.199.241:7088';
+axios.defaults.baseURL = 'http://118.184.216.181:1109';
 
 Vue.use(VueResource);
 Vue.use(VueCordova);

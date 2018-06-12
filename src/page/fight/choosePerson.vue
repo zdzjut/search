@@ -21,7 +21,7 @@
 
             <img src="../../assets/bottom.png" alt="">
         </div>
-        <CommitButton></CommitButton>
+        <commit-button></commit-button>
     </div>
   </div>
 </template>
