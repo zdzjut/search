@@ -3,7 +3,7 @@
   <div>
     <fight-header v-bind:title="title"></fight-header>
     <settle v-bind:recordId="recordId"></settle>
-    <data-list     v-bind:myurl="myurl"></data-list>
+    <data-list v-bind:myurl="myurl"></data-list>
 
   </div>
 </template>
@@ -20,24 +20,23 @@
       return {
         title: '新的一局',
         recordId: -1,
-        myurl:'/fight/showRecord'
+        myurl: '',
 
       }
     },
-    created:function () {
+    created: function () {
       this.setRecordId();
     },
     methods: {
-      setRecordId:function () {
+      setRecordId: function () {
         //接收传递过来的参数
-        this.recordId=this.$route.params.recordId;
+        let id = this.$route.params.recordId;
+        this.recordId = id;
+        this.myurl = '/fight/showRecord/?recordId=' + id;
       },
-      add:function () {
-
-      }
-  },
+    },
     components: {
-      FightHeader,DataList,Settle
+      FightHeader, DataList, Settle
     }
   }
 </script>

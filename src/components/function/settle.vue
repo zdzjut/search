@@ -59,7 +59,7 @@
           return;
         }
         let user = Store.getMap("user");
-        if (user==null ){
+        if (user == null) {
           showLongCenter('未登录！');
           return;
         }
@@ -67,6 +67,8 @@
         let myurl = '/fight/takeNote?recordId=' + this.recordId + '&landowner=' + landowner + '&times=' + multiply + '&loginUserId' + user.id;
         this.axios.get(myurl).then(function (response) {
           if (response.data.result === 1) {
+            //子组件向父组件传值
+            myself.$emit('getRecord',response.data);
             myself.$router.push({path: '/'});
           }
         }).catch(function (response) {
