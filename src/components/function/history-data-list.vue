@@ -1,4 +1,4 @@
-<!--从后台取数据,每局的数据-->
+<!--历史详情列表-->
 <template>
   <div>
     <table>
@@ -30,7 +30,7 @@
     methods: {
       search: function () {
         let myself = this;
-        let myurl = this.myurl;
+        let myurl = this.myurl+'?recordId=1';
         this.axios.get(myurl).then(function (response) {
           //设定每局结构， { user-list ,list{record-list} },user 第一个是序号
           myself.userList = response.data.data.users;
