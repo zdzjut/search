@@ -3,10 +3,10 @@
   <div>
     <table>
       <tr>
-        <th v-for="user in userList"><span v-text="user.name"></span></th>
+        <th v-for="user in oneRecord.users"><span v-text="user.name"></span></th>
       </tr>
       <!--rounds代表多少回合-->
-      <tr v-for="round in rounds">
+      <tr v-for="round in oneRecord.rounds">
         <!--round里有4个-->
         <td v-for="one in round"><span v-text="one"></span></td>
       </tr>
@@ -19,30 +19,38 @@
     name: "data-list",
     data() {
       return {
-        userList: [],
-        rounds: [],
+        // userList: [],
+        // rounds: [],
       }
     },
     created: function () {
-      this.search();
+      // this.search();
     },
-
     methods: {
-      search: function () {
-        let myself = this;
-        let myurl = this.myurl;
-        this.axios.get(myurl).then(function (response) {
-          //设定每局结构， { user-list ,list{record-list} },user 第一个是序号
-          myself.userList = response.data.data.users;
-          myself.rounds = response.data.data.rounds;
-
-        }).catch(function (response) {
-          console.log(response);
-        });
+      // search: function () {
+      //   let oneRecord = this.oneRecord;
+      //   console.log(oneRecord);
+      //   this.userList = oneRecord.users;
+      //   this.rounds = oneRecord.rounds;
+      //
+      // }
+    },
+    watch: {
+      oneRecord: {
+        handler (val) {
+          console.log('发生变化', val)
+        },
+        deep: true
       }
     },
-    // 传递数据，本组件标签传递过去后 v-bind：props 对应的值，就能传递相应的数据过来
-    props: ['myurl']
+    props:{
+      oneRecord:{
+        type:Object,
+        default () {
+          return {}
+        }
+      }
+    }
   }
 
 </script>

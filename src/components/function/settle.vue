@@ -26,13 +26,7 @@
       return {
         landowner: -1,
         multiply: 0,
-        users: [
-          {id: -1, name: '本局地主'},
-          {id: 1, name: 'A'},
-          {id: 2, name: 'B'},
-          {id: 3, name: 'C'},
-          {id: 4, name: 'D'},
-        ],
+        users: [],
         times: [
           {name: '输赢倍数', value: 0},
           {name: '赢', value: 1},
@@ -63,14 +57,12 @@
           showLongCenter('未登录！');
           return;
         }
-        let myurl = '/fight/takeNote?recordId=' + this.recordId + '&landowner=' + landowner + '&times=' + multiply + '&loginUserId' + user.id;
+        let myurl = '/fight/takeNote?recordId=' + this.recordId + '&landowner=' + landowner + '&times=' + multiply + '&loginUserId=' + user.id;
         let myself = this;
 
         this.axios.get(myurl).then(function (response) {
-          console.log(response);
           if (response.data.result === 1) {
-            //子组件向父组件传值
-            myself.$router.push({path: '/'});
+            myself.$router.push({path: '/game/'+myself.recordId});
           }
         }).catch(function (response) {
         });
@@ -78,16 +70,35 @@
       exitGame: function () {
         warn("退出后被其他人继续记账", "退出", "OK");
         let myself = this;
-        let myurl = '/fight/exitGame?recordId=' + username + '&password=' + password;
+        let myurl = '/fight/exitGame?recordId=' + this.recordId;
         this.axios.get(myurl).then(function (response) {
           if (response.data.result === 1) {
             myself.$router.push({path: '/'})
           }
         }).catch(function (response) {
         });
+      },
+      showUser: function () {
+        let myself = this;
+        let myurl = '/fight/showRecord/?recordId=' + this.recordId;
+        this.axios.get(myurl).then(function (response) {
+          let oneRecord = response.data.data;
+          let tempUsers = oneRecord.users;
+          let one = {id: -1, name: '选择地主'};
+          tempUsers.splice(0, 1, one);
+          myself.users = tempUsers;
+        }).catch(function (response) {
+          console.log(response);
+        });
       }
+
     },
+    created: function () {
+      this.showUser()
+    },
+
     props: ['recordId']
+
   }
 </script>
 

@@ -15,17 +15,18 @@
     data() {
       return {
         timemuch:10,
+        times: [10, 5, 20, 50, 1],
       }
     },
     methods: {
       chooseTime(){
         let data = {
-          time:this.timemuch
+          timemuch:this.timemuch
         };
-        this.$emit('muchtime',data,'lalala');
+        //子组件向父组件传值
+        this.$emit('muchtime',data);
       }
     },
-    props: ['times']
   }
 </script>
 
