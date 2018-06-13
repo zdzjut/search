@@ -118,7 +118,9 @@
   }
 
   .SelectUsersCDiv label {
-    font-size: 1.4rem;
+      font-size: 1.4rem;
+      display: inline-block;
+      width:5rem;
   }
 
   .SelectUsersCenter {
