@@ -11,7 +11,6 @@
 <script>
 
   import Headoo from '../../components/header'
-  import First from '../../components/first.vue'
   import BodyList from './bodyList.vue'
   import DataList from '../../components/function/data-list.vue'
 
@@ -23,7 +22,7 @@
       }
     },
     components: {
-      Headoo, First, BodyList, DataList
+      Headoo, BodyList, DataList
     },
   }
 </script>
