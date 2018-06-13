@@ -3,7 +3,7 @@
   <div>
     <fight-header v-bind:title="title"></fight-header>
     <div class="SelectUsers">
-      <select-time  v-on:muchtime="showTimeMuch"></select-time>
+      <select-time v-on:muchtime="showTimeMuch"></select-time>
       <div class="SelectUsersC">
         <img src="../../assets/top.png" alt="">
         <ul class="SelectUsersCenter">
@@ -49,10 +49,9 @@
     },
     methods: {
       showAll: function () {
-        let myself = this;
         let myurl = '/fight/showUserList';
-        this.axios.get(myurl).then(function (response) {
-          myself.users = response.data.data;
+        this.axios.get(myurl).then((response) => {
+          this.users = response.data.data;
 
         }).catch(function (response) {
           console.log(response);
@@ -64,12 +63,11 @@
           return;
         }
         let user = Store.getMap("user");
-        let myself = this;
-        let myurl = '/fight/choosePerson?users=' +  chosen.toString() + '&times=' + this.timemuch + '&loginUserId=' + user.id;
-        this.axios.get(myurl).then(function (response) {
-          if (response.data.result===1){
-            myself.$router.push({path: '/game/'+response.data.data.id})
-          }else {
+        let myurl = '/fight/choosePerson?users=' + chosen.toString() + '&times=' + this.timemuch + '&loginUserId=' + user.id;
+        this.axios.get(myurl).then((response) => {
+          if (response.data.result === 1) {
+            this.$router.push({path: '/game/' + response.data.data.id})
+          } else {
             warn(response.data.message, "选人错误", "OK");
           }
         }).catch(function (response) {
@@ -79,16 +77,15 @@
       chooseArray: function (id) {
         let chosen = this.chosen;
         let index = chosen.indexOf(id);
-        //-1代表不存在
+        //-1代表不存在  如果存在，删除
         if (index === -1) {
           chosen.push(id);
         } else {
-          //如果存在，删除
           chosen.splice(index, 1);
         }
       },
-      showTimeMuch (data) {
-        this.timemuch=data.timemuch;
+      showTimeMuch(data) {
+        this.timemuch = data.timemuch;
       }
     },
     components: {

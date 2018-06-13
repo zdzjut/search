@@ -101,9 +101,9 @@
         });
       },
       exitGame: function () {
-        warn("退出后被其他人继续记账", "退出", "OK");
-        let myself = this;
-        let myurl = '/fight/exitGame?recordId=' + this.recordId;
+        warn("退出后无法继续记账", "退出", "OK");
+        let user = Store.getMap("user");
+        let myurl = '/fight/exit?recordId=' + this.recordId+ '&loginUserId=' + user.id;
         this.axios.get(myurl).then((response) => {
           if (response.data.result === 1) {
             this.$router.push({path: '/'})

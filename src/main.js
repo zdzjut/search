@@ -30,8 +30,7 @@ Vue.use(VueCordova);
 
 
 
-//安卓返回键退出方法
-//   document.addEventListener("backbutton", onBackKeyDown, false);
+  // document.addEventListener("backbutton", onBackKeyDown, false);
 // }, false);
 
 
