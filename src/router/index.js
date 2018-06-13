@@ -9,9 +9,6 @@ import ContinueGame from '@/page/fight/continueGame'
 import Game from '@/page/fight/game'
 import Login from '@/page/fight/login'
 
-import Todolist from '@/page/todolist'
-
-
 Vue.use(Router);
 
 export default new Router({
@@ -26,10 +23,6 @@ export default new Router({
     }, {
       path: '/modifyUser',
       component: ModifyUser
-    },
-    {
-      path: '/todolist',
-      component: Todolist
     },
     {
       path: '/game/:recordId',
