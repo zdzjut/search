@@ -13,7 +13,7 @@
       </dl>
     </div>
     <div class="AddUsersButton">
-        <button @click="createUser()">提交</button>
+      <button @click="createUser()">提交</button>
     </div>
   </div>
 </template>
@@ -35,12 +35,15 @@
       createUser: function () {
         let username = this.username;
         let password = this.password;
-        let myself=this;
+        if (username == null || username === undefined) {
+          warn('用户名不能为空', "添加用户", "OK");
+          return;
+        }
         let myurl = '/fight/addUser?username=' + username + '&password=' + password;
-        this.axios.get(myurl).then(function (response) {
+        this.axios.get(myurl).then((response) => {
           warn(response.data.message, "添加用户结果", "OK");
-          if (response.data.result===1){
-            myself.$router.push({path: '/'})
+          if (response.data.result === 1) {
+            this.$router.push({path: '/'})
           }
         }).catch(function (response) {
         });
@@ -53,48 +56,50 @@
 </script>
 
 <style scoped>
-    .AddUsersB {
+  .AddUsersB {
     width: 100%;
-    }
+  }
 
-    .AddUsersDl {
+  .AddUsersDl {
     width: 100%;
     height: 3rem;
     line-height: 3rem;
     font-size: 1.2rem;
     margin-top: 1rem;
-    }
+  }
 
-    .AddUsersDl dt {
+  .AddUsersDl dt {
     display: inline-block;
     width: 28%;
     text-align: right;
-    }
+  }
 
-    .AddUsersDl dd {
+  .AddUsersDl dd {
     width: 70%;
     display: inline-block;
-    }
+  }
 
-    .AddUsersDl dd > input {
+  .AddUsersDl dd > input {
     border: 0.1rem solid #ccc;
     height: 2rem;
     width: 60%;
     border-radius: 0.3rem;
-    }
-    .AddUsersButton{
+  }
+
+  .AddUsersButton {
     width: 100%;
     text-align: center;
-    }
-    .AddUsersButton button{
-        width:65%;
-        height:3rem;
-        background:#3492E9;
-        border:none;
-        font-size: 15px;
-        letter-spacing:1rem;
-        color:#fff;
-        margin-top:1rem;
-        border-radius: 0.5rem;
-    }
+  }
+
+  .AddUsersButton button {
+    width: 65%;
+    height: 3rem;
+    background: #3492E9;
+    border: none;
+    font-size: 15px;
+    letter-spacing: 1rem;
+    color: #fff;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+  }
 </style>
