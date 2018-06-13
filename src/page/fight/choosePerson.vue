@@ -60,6 +60,7 @@
       choosePerson: function () {
         let chosen = this.chosen;
         if (chosen.length !== 4) {
+          warn('选4个人OK?', "选人错误", "OK");
           return;
         }
         let user = Store.getMap("user");
