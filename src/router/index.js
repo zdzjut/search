@@ -9,6 +9,7 @@ import ContinueGame from '@/page/fight/continueGame'
 import Game from '@/page/fight/game'
 import Login from '@/page/fight/login'
 
+
 Vue.use(Router);
 
 export default new Router({

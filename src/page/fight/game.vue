@@ -1,23 +1,25 @@
 <!--新的一局-->
 <template>
-  <div>
+  <div class="this-page">
     <fight-header v-bind:title="title"></fight-header>
-    地主: <select v-model="landowner">
-    <option v-for="user in users" v-bind:value="user.id">
-      {{ user.name }}
-    </option>
-  </select>
-    倍数: <select v-model="multiply">
-    <option v-for="ti in times" v-bind:value="ti.value">
-      {{ ti.name }}
-    </option>
-  </select>
+
+    <span class="SelectName">地主：</span>
+    <select v-model="landowner" class="select">
+      <option v-for="user in users" v-bind:value="user.id">{{user.name}}</option>
+    </select>
+
+    <span class="SelectName">倍数：</span>
+    <select v-model="multiply" class="select">
+      <option v-for="ti in times" v-bind:value="ti.value">{{ti.name}}</option>
+    </select>
     <button @click="takeNote()">提交</button>
-    <button @click="exitGame()">退出</button>
 
 
     <data-list :oneRecord="oneRecord"></data-list>
+    <div class="commit-button">
+      <button @click="exitGame()">退出</button>
 
+    </div>
   </div>
 </template>
 
@@ -26,8 +28,7 @@
   import FightHeader from "../../components/fightHeader"
   import DataList from '../../components/function/data-list.vue'
   import Settle from '../../components/function/settle.vue'
-  import {warn} from "../../../static/cordovaplugin"
-  import {showLongCenter} from "../../../static/cordovaplugin"
+  import {showLongCenter, warn} from "../../../static/cordovaplugin"
   import Store from "../../utils/store";
 
 
@@ -103,7 +104,7 @@
       exitGame: function () {
         warn("退出后无法继续记账", "退出", "OK");
         let user = Store.getMap("user");
-        let myurl = '/fight/exit?recordId=' + this.recordId+ '&loginUserId=' + user.id;
+        let myurl = '/fight/exit?recordId=' + this.recordId + '&loginUserId=' + user.id;
         this.axios.get(myurl).then((response) => {
           if (response.data.result === 1) {
             this.$router.push({path: '/'})
@@ -120,5 +121,30 @@
 </script>
 
 <style scoped>
+  .SelectName {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 
+  .select {
+    width: 20%;
+    height: 3rem;
+    border: 0.1rem solid #2B94FF;
+    border-radius: 0.3rem;
+  }
+  .commit-button{margin-top:3rem;margin-bottom:3rem;}
+  .commit-button button{
+    width:18rem;
+    height:3rem;
+    border:none;
+    border-radius: 1rem;
+    background:#3492E9;
+    color:#fff;
+    font-size: 15px;
+    margin-top:3rem;
+  }
+  .this-page{
+    width: 100%;
+    text-align: center;
+  }
 </style>

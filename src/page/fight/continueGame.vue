@@ -18,7 +18,7 @@
     },
     methods: {
       test: function () {
-        this.$router.push({path: '/game/2'})
+        this.$router.push({path: '/game/39'})
 
       }
     },
