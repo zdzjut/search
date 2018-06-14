@@ -12,13 +12,11 @@
     <select v-model="multiply" class="select">
       <option v-for="ti in times" v-bind:value="ti.value">{{ti.name}}</option>
     </select>
-    <button @click="takeNote()">提交</button>
-
+    <button @click="takeNote()" class="btn">确认</button>
 
     <data-list :oneRecord="oneRecord"></data-list>
     <div class="commit-button">
       <button @click="exitGame()">退出</button>
-
     </div>
   </div>
 </template>
@@ -27,7 +25,6 @@
 
   import FightHeader from "../../components/fightHeader"
   import DataList from '../../components/function/data-list.vue'
-  import Settle from '../../components/function/settle.vue'
   import {showLongCenter, warn} from "../../../static/cordovaplugin"
   import Store from "../../utils/store";
 
@@ -115,7 +112,7 @@
 
     },
     components: {
-      FightHeader, DataList, Settle
+      FightHeader, DataList
     }
   }
 </script>
@@ -127,10 +124,11 @@
   }
 
   .select {
-    width: 20%;
-    height: 3rem;
+    width: 25%;
+    height: 2rem;
     border: 0.1rem solid #2B94FF;
     border-radius: 0.3rem;
+    margin-bottom: 3rem;
   }
   .commit-button{margin-top:3rem;margin-bottom:3rem;}
   .commit-button button{
@@ -146,5 +144,16 @@
   .this-page{
     width: 100%;
     text-align: center;
+  }
+  .btn{
+    width:7rem;
+    height:2rem;
+    background: url("../../assets/sure.png");
+    border:none;
+    border-radius: 0.5rem;
+    color:#fff;
+    font-size: 15px;
+    margin-top:1rem;
+    margin-left: 0.5rem;
   }
 </style>

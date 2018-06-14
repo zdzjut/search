@@ -7,6 +7,8 @@ import Personal from '@/page/fight/personal'
 import ChoosePerson from '@/page/fight/choosePerson'
 import ContinueGame from '@/page/fight/continueGame'
 import Game from '@/page/fight/game'
+import History from '@/page/fight/history'
+import HistoryDataList from '@/page/fight/history-data-list'
 import Login from '@/page/fight/login'
 
 
@@ -41,6 +43,12 @@ export default new Router({
     },{
       path: '/personal',
       component: Personal
+    },{
+      path: '/history',
+      component: History
+    },{
+      path: '/historyDataList/:recordId',
+      component: HistoryDataList
     },
 
   ]

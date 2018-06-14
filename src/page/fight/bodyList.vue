@@ -10,7 +10,7 @@
         </router-link>
       </li>
       <li class="CenterLi">
-        <router-link :to="{ path: '/newGame'}">
+        <router-link :to="{ path: '/history'}">
           <img src="../../../src/assets/33.png" alt="">
         </router-link>
       </li>

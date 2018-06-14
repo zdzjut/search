@@ -2,15 +2,6 @@
 <template>
   <div>
     <headoo></headoo>
-
-    <ul>
-      <li v-for="test in testlist">
-        <div v-bind="testlist1">
-
-          <span :class='{sprite:true,cola:test===testlist1[1]}'>{{test}}</span>
-        </div>
-      </li>
-    </ul>
     <body-list></body-list>
     <h5 class="reminder">如果本软件不好用，也请付费</h5>
   </div>
@@ -25,8 +16,6 @@
     name: "index",
     data() {
       return {
-        testlist: [1, 2, 3, 4, 5, 6, 7],
-        testlist1: [1, 2, 3, 4, 1, 0, 1],
       }
     },
     components: {

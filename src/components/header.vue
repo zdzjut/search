@@ -36,11 +36,12 @@
     background: url("../../src/assets/left.png");
   }
   .mid {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     display: inline-block;
     margin-top: 1.5rem;
-    background: url("../../src/assets/logo.jpg");
+    background: url("../../src/assets/logo.png") ;
+    background-size:100%100%;
   }
 
   .right {
@@ -49,7 +50,7 @@
     float: right;
     margin-top: 1.5rem;
     margin-right:1rem;
-    background: url("../../src/assets/right.png");
+    background: url("../../src/assets/right.png") ;
   }
 </style>
 

@@ -16,7 +16,7 @@ axios.defaults.baseURL = 'http://118.184.216.181:1109';
 Vue.use(VueResource);
 Vue.use(VueCordova);
 
-// document.addEventListener('deviceready', function () {
+document.addEventListener('deviceready', function () {
 
   new Vue({
     el: '#app',
@@ -30,8 +30,8 @@ Vue.use(VueCordova);
 
 
 
-  // document.addEventListener("backbutton", onBackKeyDown, false);
-// }, false);
+  document.addEventListener("backbutton", onBackKeyDown, false);
+}, false);
 
 
 function onBackKeyDown() {
