@@ -15,9 +15,7 @@
         <td><span v-for="user in (record.users).slice(1,5)">{{user.name}}&nbsp;</span></td>
         <td><span>{{record.date}}</span></td>
         <td>
-          <router-link :to="{ path: '/game/'+record.id}">
-            <span class="btn">继续</span>
-          </router-link>
+            <span class="btn" @click="checkLock(record.id)">继续</span>
         </td>
       </tr>
     </table>
@@ -26,16 +24,19 @@
 
 <script>
   import FightHeader from "../../components/fightHeader"
+  import Store from "../../utils/store"
+  import {showLongCenter} from "../../../static/cordovaplugin"
+
 
   export default {
     name: "continueGame",
     data() {
       return {
         title: '正在进行列表',
-        history:[],
+        history: [],
       }
     },
-    created:function () {
+    created: function () {
       this.showHistory();
     },
     methods: {
@@ -47,7 +48,25 @@
         }).catch(function (response) {
           console.log(response);
         });
-      }
+      },
+      checkLock: function (id) {
+        let user = Store.getMap("user");
+        if (user == null || user === undefined) {
+          showLongCenter('未登录！');
+          this.$router.push({path: '/login'});
+        } else {
+          let myurl = '/fight/continueGame?recordId=' + id + '&loginUserId=' + user.id;
+          this.axios.get(myurl).then((response) => {
+            if (response.data.result === 1) {
+              this.$router.push({path: '/game/' + id});
+            } else {
+              showLongCenter(response.data.message);
+            }
+          }).catch(function (response) {
+            console.log(response);
+          });
+        }
+      },
     },
     components: {
       FightHeader
@@ -96,7 +115,8 @@
   .this-page tr:nth-child(even) {
     background-color: #fdfdfd;
   }
-  .btn{
+
+  .btn {
     color: blue;
   }
 </style>

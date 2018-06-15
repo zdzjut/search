@@ -25,7 +25,7 @@
 
   import FightHeader from "../../components/fightHeader"
   import DataList from '../../components/function/data-list.vue'
-  import {showLongCenter, warn} from "../../../static/cordovaplugin"
+  import {showLongCenter} from "../../../static/cordovaplugin"
   import Store from "../../utils/store";
 
 
@@ -73,6 +73,13 @@
         });
       },
       takeNote: function () {
+
+        let user = Store.getMap("user");
+        if (user == null) {
+          showLongCenter('未登录！');
+          return;
+        }
+
         let landowner = this.landowner;
         if (landowner === -1 || landowner == null || landowner === undefined) {
           showLongCenter('地主没选好！');
@@ -83,11 +90,7 @@
           showLongCenter('倍数没选好！');
           return;
         }
-        let user = Store.getMap("user");
-        if (user == null) {
-          showLongCenter('未登录！');
-          return;
-        }
+
         let myurl = '/fight/takeNote?recordId=' + this.recordId + '&landowner=' + landowner + '&times=' + multiply + '&loginUserId=' + user.id;
 
         this.axios.get(myurl).then((response) => {
@@ -99,7 +102,9 @@
         });
       },
       exitGame: function () {
-        warn("退出后无法继续记账", "退出", "OK");
+        if (!confirm("退出后无法继续记账!")){
+          return;
+        }
         let user = Store.getMap("user");
         let myurl = '/fight/exit?recordId=' + this.recordId + '&loginUserId=' + user.id;
         this.axios.get(myurl).then((response) => {

@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <router-link :to="{ path: '/addUser'}"><span class="left"></span></router-link>
-    <span class="mid"></span>
+    <span class="mid">  <img src="../../src/assets/logo.png" alt=""></span>
     <span class="right" @click="fightExit()"></span>
   </header>
 </template>
@@ -40,8 +40,8 @@
     height: 3rem;
     display: inline-block;
     margin-top: 1.5rem;
-    background: url("../../src/assets/logo.png") ;
-    background-size:100%100%;
+    /*background: url("../../src/assets/logo.png") ;*/
+    /*background-size:100% 100%;*/
   }
 
   .right {
